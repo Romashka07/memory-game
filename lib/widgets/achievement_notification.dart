@@ -56,7 +56,6 @@ class _AchievementNotificationState extends State<AchievementNotification> with 
 
   @override
   void dispose() {
-    // Звільнення ресурсів анімації
     _controller.dispose();
     super.dispose();
   }

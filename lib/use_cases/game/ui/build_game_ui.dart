@@ -6,6 +6,7 @@ import '../../../widgets/game_over_dialog.dart';
 import '../../../widgets/level_complete_dialog.dart';
 import '../../../widgets/game_menu_dialog.dart';
 import '../../../screens/game_screen.dart';
+import '../../../widgets/custom_hint_button.dart';
 
 class BuildGameUIInput {
   final double screenWidth;
@@ -320,47 +321,11 @@ class BuildGameUIUseCase implements BaseUseCase<BuildGameUIInput, BuildGameUIOut
   }
 
   Widget _buildHintButton(IconData icon, String cost, bool canUse, Function() onPressed) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(
-        color: canUse ? const Color(0xFF6FA1FF) : const Color(0xFF6FA1FF).withOpacity(0.5),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white,
-          width: 2,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            blurRadius: 4,
-            offset: const Offset(2, 2),
-          ),
-        ],
-      ),
-      child: InkWell(
-        onTap: canUse ? onPressed : null,
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.white, size: 24),
-            const SizedBox(width: 4),
-            Row(
-              children: [
-                Text(
-                  cost,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    fontFamily: 'IrishGrover',
-                  ),
-                ),
-                const SizedBox(width: 2),
-                const Icon(Icons.diamond, color: Colors.yellow, size: 18),
-              ],
-            ),
-          ],
-        ),
-      ),
+    return CustomHintButton(
+      icon: icon,
+      cost: cost,
+      canUse: canUse,
+      onPressed: onPressed,
     );
   }
 

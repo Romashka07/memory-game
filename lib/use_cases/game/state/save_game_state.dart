@@ -1,6 +1,6 @@
-import '../../models/card_item.dart';
-import '../../models/saved_game_state.dart';
-import '../base_use_case.dart';
+import '../../../models/card_item.dart';
+import '../../../models/saved_game_state.dart';
+import '../../base_use_case.dart';
 
 class SaveGameStateInput {
   final List<CardItem> cards;

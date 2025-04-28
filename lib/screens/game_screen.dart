@@ -46,12 +46,10 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
   late GameUI _gameUI;
   final _soundManager = SoundManager();
 
-  // Контролери анімації для підказок
   late AnimationController _pairHintAnimationController;
   late AnimationController _freezeHintAnimationController;
   late AnimationController _showHintAnimationController;
-  
-  // Анімації затемнення для підказок
+
   late Animation<double> _pairHintDarkeningAnimation;
   late Animation<double> _freezeHintDarkeningAnimation;
   late Animation<double> _showHintDarkeningAnimation;

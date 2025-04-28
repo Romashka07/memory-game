@@ -9,13 +9,13 @@ class SavedGameState {
   final int? secondCardIndex;
   final bool isProcessing;
 
-  const SavedGameState({
+  SavedGameState({
     required this.cards,
     required this.timeLeft,
     required this.score,
     required this.level,
     this.firstCardIndex,
     this.secondCardIndex,
-    this.isProcessing = false,
+    required this.isProcessing,
   });
 } 

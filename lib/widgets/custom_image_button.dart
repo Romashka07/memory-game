@@ -48,7 +48,6 @@ class _CustomImageButtonState extends State<CustomImageButton>
       vsync: this,
     );
 
-    // Налаштування анімації масштабування
     _scaleAnimation = Tween<double>(
       begin: 1.0,
       end: 0.95,
@@ -79,7 +78,6 @@ class _CustomImageButtonState extends State<CustomImageButton>
 
   @override
   void dispose() {
-    // Звільнення ресурсів анімації
     _animationController.dispose();
     super.dispose();
   }
@@ -89,7 +87,6 @@ class _CustomImageButtonState extends State<CustomImageButton>
     _animationController.forward();
   }
 
-  // Обробка відпускання кнопки
   Future<void> _handleTapUp(TapUpDetails details) async {
     _animationController.reverse();
     await _soundManager.playClickSound();
@@ -103,10 +100,9 @@ class _CustomImageButtonState extends State<CustomImageButton>
 
   @override
   Widget build(BuildContext context) {
-    // Розрахунок розмірів кнопки
     final screenWidth = MediaQuery.of(context).size.width;
-    final buttonWidth = screenWidth * 0.7; // 70% від ширини екрану
-    final buttonHeight = buttonWidth * 0.3; // Зберігаємо пропорції
+    final buttonWidth = screenWidth * 0.7;
+    final buttonHeight = buttonWidth * 0.3;
 
     return GestureDetector(
       onTapDown: _handleTapDown,
@@ -146,7 +142,6 @@ class _CustomImageButtonState extends State<CustomImageButton>
                       widget.imagePath,
                       fit: BoxFit.contain,
                     ),
-                    // Ефект затемнення при натисканні
                     AnimatedBuilder(
                       animation: _darkeningAnimation,
                       builder: (context, child) {

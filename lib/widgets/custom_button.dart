@@ -22,7 +22,8 @@ class CustomButton extends StatelessWidget {
         // Стилізація кнопки
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.green,
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+          minimumSize: const Size.fromHeight(50),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -32,7 +33,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           text,
           style: const TextStyle(
-            fontSize: 24,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
